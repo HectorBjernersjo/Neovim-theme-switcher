@@ -1,5 +1,6 @@
 {
     "gthelding/monokai-pro.nvim",
+    lazy = false,
     config = function()
         require("monokai-pro").setup({
             filter = "ristretto",

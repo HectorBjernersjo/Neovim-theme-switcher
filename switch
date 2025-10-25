@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LUA_DIR="${SCRIPT_DIR}/lua"
+
+if [[ $# -ne 1 ]]; then 
+    echo "Usage: $(basename "$0") <theme-name>"
+    echo "Available themes:"
+    files=($(ls -1 "${LUA_DIR}" | sed 's/\.lua$//' | sort))
+    printf '%s\n' "${files[*]}" | sed 's/ /, /g'
+    exit 1
+fi
+
+$SCRIPT_DIR/switch_theme_file.sh $1
+$SCRIPT_DIR/switch_theme_instant.sh $1

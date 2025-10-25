@@ -1,23 +1,21 @@
 return {
-	{ "EdenEast/nightfox.nvim", Lazy = true },
-	{ "ellisonleao/gruvbox.nvim", Lazy = true },
-	{ "rebelot/kanagawa.nvim", Lazy = true },
-	{ "gthelding/monokai-pro.nvim", Lazy = true },
-	{ "rose-pine/neovim", Lazy = true },
-	{ "catppuccin/nvim", Lazy = true },
-	{ "neanias/everforest-nvim", Lazy = true },
-	{ "ribru17/bamboo.nvim", Lazy = true },
-	{ "tahayvr/matteblack.nvim", Lazy = true },
-	{ "folke/tokyonight.nvim", Lazy = true },
-	{ "kepano/flexoki-neovim", Lazy = true },
+	{ "EdenEast/nightfox.nvim", lazy = true },
+	{ "ellisonleao/gruvbox.nvim", lazy = true },
+	{ "rebelot/kanagawa.nvim", lazy = true },
+	{ "gthelding/monokai-pro.nvim", lazy = true },
+	{ "rose-pine/neovim", lazy = true },
+	{ "catppuccin/nvim", lazy = true },
+	{ "neanias/everforest-nvim", lazy = true },
+	{ "ribru17/bamboo.nvim", lazy = true },
+	{ "tahayvr/matteblack.nvim", lazy = true },
+	{ "folke/tokyonight.nvim", lazy = true },
+	{ "kepano/flexoki-neovim", lazy = true },
 
-{
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-	config = function()
-		vim.cmd.colorscheme("tokyonight-night")
-	end,
-}
+{ 
+    "rebelot/kanagawa.nvim" ,
+    lazy = false,
+    config = function()
+        vim.cmd.colorscheme("kanagawa")
+    end
+},
 }

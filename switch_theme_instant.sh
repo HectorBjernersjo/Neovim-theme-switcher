@@ -60,7 +60,6 @@ if ((${#files[@]} == 0)); then
 fi
 
 for file in "${files[@]}"; do
-  echo "Updating $file -> background=$b, colorscheme=$cs"
   nvim --server "$file" --remote-send ":set background=${b}<CR>:colorscheme ${cs}<CR>"
 done
 
