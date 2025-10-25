@@ -3,7 +3,6 @@ set -euo pipefail
 
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SCRIPT_DIR="$script_dir"
 LUA_DIR="${SCRIPT_DIR}/lua"
 TEMPLATE="${SCRIPT_DIR}/theme-template.lua"
 OUT="${SCRIPT_DIR}/theme.lua"
