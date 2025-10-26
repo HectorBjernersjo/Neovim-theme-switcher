@@ -51,7 +51,7 @@ b="${bg[$theme]:-dark}"  # sane default
 
 # Find all running headless UI sockets; skip if none
 shopt -s nullglob
-files=(/run/user/1000/nvim.*)
+files=($XDG_RUNTIME_DIR/nvim.*)
 shopt -u nullglob
 
 if ((${#files[@]} == 0)); then
@@ -60,7 +60,7 @@ if ((${#files[@]} == 0)); then
 fi
 
 for file in "${files[@]}"; do
-  nvim --server "$file" --remote-send ":set background=${b}<CR>:colorscheme ${cs}<CR>"
+  nvim --server "$file" --remote-expr "execute('colorscheme ${cs}')"
 done
 
 echo "✅ Applied ${theme} (${cs}) with ${b} background to ${#files[@]} instance(s)."
