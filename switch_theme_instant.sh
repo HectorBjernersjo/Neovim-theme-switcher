@@ -51,7 +51,12 @@ b="${bg[$theme]:-dark}"  # sane default
 
 # Find all running headless UI sockets; skip if none
 shopt -s nullglob
-files=($XDG_RUNTIME_DIR/nvim.*)
+files=()
+if [[ -n ${XDG_RUNTIME_DIR-} && -d ${XDG_RUNTIME_DIR-} ]]; then
+  files=("${XDG_RUNTIME_DIR}"/nvim.*)
+else
+  files=(/run/user/*/nvim.*)
+fi
 shopt -u nullglob
 
 if ((${#files[@]} == 0)); then
